@@ -1,0 +1,22 @@
+{
+    "configurations": [
+        {
+            "name": "pretest",
+            "policies": [],
+            "proxies": [],
+            "targets": []
+        },
+        {
+            "name": "test",
+            "policies": [],
+            "proxies": [],
+            "targets": []
+        },
+        {
+            "name": "prod",
+            "policies": [],
+            "proxies": [],
+            "targets": []
+        }
+    ]
+}

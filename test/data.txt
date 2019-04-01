@@ -1,0 +1,5 @@
+node ./node_modules/cucumber/bin/cucumber-js --world-parameters '{"scheme": "https","domain": "emea-poc8-test.apigee.net/v1/geocode","address": "8 rue de Londres 75009 Paris","apikey": "lAIzAnnxvd1lYoSR1spBtRMK8NA9hKul"}' --format ./node_modules/cucumber-pretty
+
+
+
+ab -n 11 -c 1 -H 'x-apikey: lAIzAnnxvd1lYoSR1spBtRMK8NA9hKul' 'https://emea-poc8-test.apigee.net/v1/geocode/json?address=8 rue de Londres 75009 Paris'

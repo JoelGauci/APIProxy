@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout name="Log-to-Splunk-Response">
+    <DisplayName>Log to Splunk</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Headers>
+                <Header name="Authorization">Splunk 33964ebc-4557-46f9-a72b-a33468020738</Header>
+            </Headers>
+            <Payload contentType="application/json">
+                    {"event":"type=RESPONSE, organization={organization.name}, region={system.region.name}, environment={environment.name}, proxy={apiproxy.name}, target_ip={target.ip}, target_host={target.host}, uri={request.uri}, response_code={response.status.code}"}
+            </Payload>
+            <Path>services/collector/event</Path>
+            <Verb>POST</Verb>
+        </Set>
+    </Request>
+    <Response>calloutResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://input-prd-p-8d5stwr7m43k.cloud.splunk.com:8088/</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>
